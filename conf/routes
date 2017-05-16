@@ -12,6 +12,8 @@ POST    /register                               Accounts.register
 POST    /authenticate                           Accounts.authenticate
 GET     /logout                                 Accounts.logout
 GET     /admin                                  Admin.index
+POST    /dashboard/addAssessment                Dashboard.addAssessment
+GET     /dashboard/{id}/deleteAssessment/{assessmentid}     Dashboard.deleteAssessment
 
 # Home page
 GET     /dashboard                              Dashboard.index
