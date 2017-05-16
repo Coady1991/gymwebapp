@@ -1,0 +1,55 @@
+Assessment(a1):
+  weight: 90
+  chest: 44
+  thigh: 22
+  upperarm: 18
+  waist: 32
+  hips: 40
+
+Assessment(a2):
+  weight: 88
+  chest: 44
+  thigh: 22
+  upperarm: 18
+  waist: 32
+  hips: 38
+
+Assessment(a3):
+  weight: 70
+  chest: 46
+  thigh: 28
+  upperarm: 22
+  waist: 36
+  hips: 44
+
+Assessment(a4):
+  weight: 69
+  chest: 46
+  thigh: 26
+  upperarm: 21
+  waist: 36
+  hips: 43
+
+Member(m1):
+  name: Niall Coady
+  email: niall@mail.com
+  password: secret
+  address: The Lane, Tramore
+  gender: Male
+  height: 1.81
+  weight: 90
+  assessments:
+  - a1
+  - a2
+
+Member(m2):
+  name: Jane Brown
+  email: janey@mail.com
+  password: secret
+  address: The Paddock, Waterford
+  gender: Female
+  height: 1.68
+  weight: 70
+  assessments:
+  - a3
+  - a4

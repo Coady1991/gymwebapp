@@ -1,14 +1,13 @@
 #{extends 'main.html' /}
 #{set title:'Dashboard' /}
 
-#{menu id:"dashboard"/}
+#{menu id:"admin"/}
 
-
-<section class="ui raised segment">
+<section class="ui segment">
   <h2 class="ui header">
-    ${member.name}'s Assessments
+    All Known Assessments in the Database:
   </h2>
-  <table class="ui celled table">
+  <table class="ui fixed table">
     <thead>
     <tr>
       <th>Weight</th>
@@ -23,22 +22,22 @@
     #{list items:assessments, as:'assessment'}
     <tr>
       <td>
-        ${assessment.weight}
+      ${assessment.weight}
       </td>
       <td>
-        ${assessment.chest}
+      ${assessment.chest}
       </td>
       <td>
-        ${assessment.thigh}
+      ${assessment.thigh}
       </td>
       <td>
-        ${assessment.upperArm}
+      ${assessment.upperarm}
       </td>
       <td>
-        ${assessment.waist}
+      ${assessment.waist}
       </td>
       <td>
-        ${assessment.hips}
+      ${assessment.hips}
       </td>
     </tr>
     #{/list}
