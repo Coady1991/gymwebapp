@@ -54,7 +54,7 @@
       <th>Upper Arm</th>
       <th>Waist</th>
       <th>Hips</th>
-      <th> </th>
+      <th>Delete</th>
     </tr>
     </thead>
     <tbody>
@@ -79,10 +79,7 @@
         ${assessment.hips}
       </td>
       <td>
-        <a href="/dashboard/${member.id}/deleteAssessment/${assessment.id}"><i class="big trash icon"></i></a>
-        <div class="label">
-          Delete
-        </div>
+        <a href="/dashboard/${member.id}/deleteAssessment/${assessment.id}"><i class="large red trash icon"></i></a>
       </td>
     </tr>
     #{/list}

@@ -1,0 +1,81 @@
+#{extends 'main.html' /}
+#{set title:'Update Profile' /}
+
+#{menu id:"update profile"/}
+
+<div class="ui two column grid basic middle aligned segment">
+  <div class="column">
+    <section class="ui raised segment">
+      <h2>
+        Update Profile
+      </h2>
+        <form class="ui raised segment form" action="/updateprofile/setName" method="POST">
+          <div class="field">
+            <label>Name</label>
+              <div class="field">
+                <input placeholder="Full Name" type="text" name="name">
+              </div>
+            <button class="ui blue submit button">Submit</button>
+          </div>
+        </form>
+        <form class="ui raised segment form" action="/updateprofile/setEmail" method="POST">
+          <div class="field">
+            <label>Email</label>
+              <div class="field">
+                <input placeholder="Email" type="text" name="email">
+              </div>
+            <button class="ui blue submit button">Submit</button>
+          </div>
+        </form>
+        <form class="ui raised segment form" action="/updateprofile/setPassword" method="POST">
+          <div class="field">
+            <label>Password</label>
+              <div class="field">
+                <input placeholder="Password" type="text" name="password">
+              </div>
+            <button class="ui blue submit button">Submit</button>
+          </div>
+        </form>
+        <form class="ui raised segment form" action="/updateprofile/setAddress" method="POST">
+          <div class="field">
+            <label>Address</label>
+              <div class="field">
+                <input placeholder="Address" type="text" name="address">
+              </div>
+            <button class="ui blue submit button">Submit</button>
+          </div>
+        </form>
+        <form class="ui raised segment form" action="/updateprofile/setGender" method="POST">
+          <div class="field">
+            <label>Gender</label>
+              <div class="field">
+                <input placeholder="Gender" type="text" name="gender">
+              </div>
+            <button class="ui blue submit button">Submit</button>
+          </div>
+        </form>
+        <form class="ui raised segment form" action="/updateprofile/setHeight" method="POST">
+          <div class="field">
+            <label>Height (M)</label>
+              <div class="field">
+                <input placeholder="Height" type="text" name="height">
+              </div>
+            <button class="ui blue submit button">Submit</button>
+          </div>
+        </form>
+        <form class="ui raised segment form" action="/updateprofile/setWeight" method="POST">
+          <div class="field">
+            <label>Weight (kg)</label>
+              <div class="field">
+                <input placeholder="Weight" type="text" name="weight">
+              </div>
+            <button class="ui blue submit button">Submit</button>
+          </div>
+        </form>
+    </section>
+  </div>
+
+  <div class="column">
+    <img class="ui image" src="/public/images/profile.jpeg" alt="profile">
+  </div>
+</div>

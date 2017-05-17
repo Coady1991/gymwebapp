@@ -8,7 +8,7 @@ import models.*;
 public class About extends Controller
 {
   public static void index() {
-    Logger.info("Rendering about");
-    render ("about.html");
+    Logger.info("Rendering Update Profile");
+    render ("updateprofile.html");
   }
 }

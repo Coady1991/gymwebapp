@@ -25,7 +25,14 @@ public class Analytics
 
   public static double calculateBMI (Member member, Assessment assessment)
   {
-    return toTwoDecimalPlaces(assessment.getWeight() / (member.getHeight() * member.getHeight()));
+    if(member.assessments.size() > 0)
+    {
+      return toTwoDecimalPlaces(assessment.getWeight() / (member.getHeight() * member.getHeight()));
+    }
+    else
+    {
+      return toTwoDecimalPlaces(member.getWeight() / (member.getHeight() * member.getHeight()));
+    }
   }
 
   /**
@@ -83,8 +90,8 @@ public class Analytics
 
   public static String idealWeight(String bmiCategory)
   {
-    String colour="";
-
+    String colour;
+    
     if(bmiCategory.contains("SEVERELY") || bmiCategory.contains("OBESE"))
     {
       colour = "red";

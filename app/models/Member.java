@@ -53,6 +53,57 @@ public class Member extends Model
   //***************************************************************************************
 
   /**
+   * Returns the Members name.
+   *
+   * @return The Members name.
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * Returns the Members email.
+   *
+   * @return The Members email
+   */
+  public String getEmail()
+  {
+    return email;
+  }
+
+  /**
+   * Returns the Members password.
+   *
+   * @return The Members password.
+   */
+  public String getPassword()
+  {
+    return password;
+  }
+
+  /**
+   * Returns the Members address..
+   *
+   * @return The Members address
+   */
+  public String getAddress()
+  {
+    return address;
+  }
+
+  /**
+   * Returns the Members gender.
+   *
+   * @return The Members gender.
+   */
+
+  public String getGender()
+  {
+    return gender;
+  }
+
+  /**
    * Returns the Members height(m).
    *
    * @return The Members height(m).
@@ -74,14 +125,43 @@ public class Member extends Model
     return weight;
   }
 
-  /**
-   * Returns the Members gender.
-   *
-   * @return The Members gender.
-   */
+  //***************************************************************************************
+  // Setters for Member
+  //***************************************************************************************
 
-  public String getGender()
+
+  public void setName(String name)
   {
-    return gender;
+    this.name = name;
+  }
+
+  public void setEmail(String email)
+  {
+    this.email = email;
+  }
+
+  public void setPassword(String password)
+  {
+    this.password = password;
+  }
+
+  public void setAddress(String address)
+  {
+    this.address = address;
+  }
+
+  public void setGender(String gender)
+  {
+    this.gender = gender;
+  }
+
+  public void setHeight(double height)
+  {
+    this.height = height;
+  }
+
+  public void setWeight(double weight)
+  {
+    this.weight = weight;
   }
 }

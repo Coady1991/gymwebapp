@@ -18,6 +18,16 @@ GET     /dashboard/{id}/deleteAssessment/{assessmentid}     Dashboard.deleteAsse
 # Home page
 GET     /dashboard                              Dashboard.index
 GET     /about                                  About.index
+GET     /updateprofile                          UpdateProfile.index
+
+# Update profile
+POST    /updateprofile/setName                  UpdateProfile.setName
+POST    /updateprofile/setEmail                 UpdateProfile.setEmail
+Post    /updateprofile/setPassword              UpdateProfile.setPassword
+Post    /updateprofile/setAddress               UpdateProfile.setAddress
+Post    /updateprofile/setGender                UpdateProfile.setGender
+Post    /updateprofile/setHeight                UpdateProfile.setHeight
+Post    /updateprofile/setWeight                UpdateProfile.setWeight
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
