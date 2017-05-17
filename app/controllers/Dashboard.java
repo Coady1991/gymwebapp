@@ -17,7 +17,8 @@ public class Dashboard extends Controller
     List<Assessment> assessments = member.assessments;
     double BMI = Analytics.calculateBMI(member, member.assessments.get(assessments.size() - 1));
     String bmiCategory = Analytics.determineBMICategory(BMI);
-    render ("dashboard.html", member, assessments, BMI, bmiCategory);
+    String idealWeight = Analytics.idealWeight(bmiCategory);
+    render ("dashboard.html", member, assessments, BMI, bmiCategory, idealWeight);
   }
 
   public static void addAssessment(double weight, double chest, double thigh, double upperArm, double waist, double hips)

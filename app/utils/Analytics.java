@@ -81,6 +81,25 @@ public class Analytics
     return BMI;
   }
 
+  public static String idealWeight(String bmiCategory)
+  {
+    String colour="";
+
+    if(bmiCategory.contains("SEVERELY") || bmiCategory.contains("OBESE"))
+    {
+      colour = "red";
+    }
+    else if(bmiCategory.contains("UNDERWEIGHT") || bmiCategory.contains("OVERWEIGHT"))
+    {
+      colour = "orange";
+    }
+    else
+    {
+      colour = "green";
+    }
+    return colour;
+  }
+
   /**
    * Returns the member height converted from metres to inches.
    *
