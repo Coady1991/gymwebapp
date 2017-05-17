@@ -23,11 +23,11 @@ GET     /updateprofile                          UpdateProfile.index
 # Update profile
 POST    /updateprofile/setName                  UpdateProfile.setName
 POST    /updateprofile/setEmail                 UpdateProfile.setEmail
-Post    /updateprofile/setPassword              UpdateProfile.setPassword
-Post    /updateprofile/setAddress               UpdateProfile.setAddress
-Post    /updateprofile/setGender                UpdateProfile.setGender
-Post    /updateprofile/setHeight                UpdateProfile.setHeight
-Post    /updateprofile/setWeight                UpdateProfile.setWeight
+POST    /updateprofile/setPassword              UpdateProfile.setPassword
+POST    /updateprofile/setAddress               UpdateProfile.setAddress
+POST    /updateprofile/setGender                UpdateProfile.setGender
+POST    /updateprofile/setHeight                UpdateProfile.setHeight
+POST    /updateprofile/setWeight                UpdateProfile.setWeight
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

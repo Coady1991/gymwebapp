@@ -54,7 +54,8 @@
       <th>Upper Arm</th>
       <th>Waist</th>
       <th>Hips</th>
-      <th>Delete</th>
+      <th>Comment</th>
+      <th> </th>
     </tr>
     </thead>
     <tbody>
@@ -79,6 +80,9 @@
         ${assessment.hips}
       </td>
       <td>
+
+      </td>
+      <td>
         <a href="/dashboard/${member.id}/deleteAssessment/${assessment.id}"><i class="large red trash icon"></i></a>
       </td>
     </tr>
@@ -91,11 +95,11 @@
   <div class="three fields">
     <div class="field">
       <label>Weight (Kg)</label>
-      <input placeholder="00.00kg" type="text" name="weight" required>
+      <input placeholder="00.00kg" type="number" min="35" max="250" step="0.01" name="weight" required>
     </div>
     <div class="field">
       <label>Chest</label>
-      <input placeholder="00.00cm" type="text" name="chest" required>
+      <input placeholder="00.00cm" type="number" required>
     </div>
     <div class="field">
       <label>Thigh</label>
