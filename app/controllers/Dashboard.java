@@ -4,6 +4,7 @@ import models.*;
 
 import play.Logger;
 import play.mvc.Controller;
+import utils.Analytics;
 
 import java.util.List;
 
@@ -14,7 +15,9 @@ public class Dashboard extends Controller
     Logger.info("Rendering Dashboard");
     Member member = Accounts.getLoggedInMember();
     List<Assessment> assessments = member.assessments;
-    render ("dashboard.html", member, assessments);
+    double BMI = Analytics.calculateBMI(member, member.assessments.get(assessments.size() - 1));
+    String bmiCategory = Analytics.determineBMICategory(BMI);
+    render ("dashboard.html", member, assessments, BMI, bmiCategory);
   }
 
   public static void addAssessment(double weight, double chest, double thigh, double upperArm, double waist, double hips)

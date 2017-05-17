@@ -48,4 +48,40 @@ public class Member extends Model
     return this.password.equals(password);
   }
 
+  //***************************************************************************************
+  // Getters for Member
+  //***************************************************************************************
+
+  /**
+   * Returns the Members height(m).
+   *
+   * @return The Members height(m).
+   */
+
+  public double getHeight()
+  {
+    return height;
+  }
+
+  /**
+   * Returns the Members starting weight(kg).
+   *
+   * @return The Members starting weight(kg).
+   */
+
+  public double getWeight()
+  {
+    return weight;
+  }
+
+  /**
+   * Returns the Members gender.
+   *
+   * @return The Members gender.
+   */
+
+  public String getGender()
+  {
+    return gender;
+  }
 }
