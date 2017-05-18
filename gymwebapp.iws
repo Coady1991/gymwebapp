@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f47a62d3-f9f6-4575-9f4f-874aaf6a73bf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf/application.conf" afterPath="$PROJECT_DIR$/conf/application.conf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gymwebapp.iws" afterPath="$PROJECT_DIR$/gymwebapp.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/utils/Analytics.java" afterPath="$PROJECT_DIR$/app/utils/Analytics.java" />
     </list>
     <ignored path="$PROJECT_DIR$/tmp/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/login.html">
+      <file leaf-file-name="Analytics.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/utils/Analytics.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="6" lean-forward="false" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+            <state relative-caret-position="272">
+              <caret line="82" column="2" lean-forward="false" selection-start-line="82" selection-start-column="2" selection-end-line="82" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -117,7 +116,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProcFile" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProcFile" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ProcFile">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -175,10 +174,10 @@
         <option value="$PROJECT_DIR$/app/models/Assessment.java" />
         <option value="$PROJECT_DIR$/app/models/Trainer.java" />
         <option value="$PROJECT_DIR$/app/models/Member.java" />
-        <option value="$PROJECT_DIR$/app/utils/Analytics.java" />
         <option value="$PROJECT_DIR$/gymwebapp.iws" />
         <option value="$PROJECT_DIR$/conf/application.conf" />
         <option value="$PROJECT_DIR$/ProcFile" />
+        <option value="$PROJECT_DIR$/app/utils/Analytics.java" />
       </list>
     </option>
   </component>
@@ -804,12 +803,12 @@
       <workItem from="1494887108912" duration="87000" />
       <workItem from="1494938381897" duration="11309000" />
       <workItem from="1495007210296" duration="36538000" />
-      <workItem from="1495094164573" duration="42606000" />
+      <workItem from="1495094164573" duration="42976000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118561000" />
+    <option name="totallyTimeSpent" value="118931000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
@@ -1177,14 +1176,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/utils/Analytics.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-399">
-          <caret line="79" column="40" lean-forward="false" selection-start-line="79" selection-start-column="40" selection-end-line="79" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/tags/mainpanel.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1317,6 +1308,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="42" lean-forward="false" selection-start-line="0" selection-start-column="42" selection-end-line="0" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/utils/Analytics.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="82" column="2" lean-forward="false" selection-start-line="82" selection-start-column="2" selection-end-line="82" selection-end-column="2" />
           <folding />
         </state>
       </provider>

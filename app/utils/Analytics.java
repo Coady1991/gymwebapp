@@ -80,6 +80,7 @@ public class Analytics
    * 2kgs (inclusive) of the weight; red if it is outside
    * this range.
    */
+  
   public static String isIdealBodyWeight(Member member)
   {
     double heightInInches = convertHeightMetresToInches(member.getHeight());
