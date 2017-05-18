@@ -30,6 +30,9 @@ POST    /updateprofile/setGender                UpdateProfile.setGender
 POST    /updateprofile/setHeight                UpdateProfile.setHeight
 POST    /updateprofile/setWeight                UpdateProfile.setWeight
 
+# Trainer
+GET     /trainerdashboard/{trainerid}/deletemember/{memberid}     TrainerDashboard.deleteMember
+
 # Ignore favicon requests
 GET     /favicon.ico                            404
 

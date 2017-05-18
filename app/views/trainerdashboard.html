@@ -5,7 +5,25 @@
 
 <section class="ui raised segment">
   <header class="ui header">
-    ${trainer.name}
+    Trainer ${trainer.name}
   </header>
+
+  <table class="ui single line table">
+    <tbody>
+      <div class="ui relaxed divided list">
+        #{list items: members, as:'member'}
+          <tr>
+            <td>
+              <div class="item">
+                <div class="content">
+                  <i class="user icon"></i>${member.name}<a href="/trainerdashboard/${trainer.id}/deletemember/${member.id}"><i class="large red trash icon"></i></a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        #{/list}
+      </div>
+    </tbody>
+  </table>
 </section>
 

@@ -60,3 +60,6 @@ Trainer(t1):
   password: secret
   address: Hillside, Dungarvan
   gender: Male
+  members:
+  - m1
+  - m2
