@@ -1,6 +1,7 @@
 package models;
 
 import play.db.jpa.Model;
+import utils.Analytics;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -110,6 +111,7 @@ public class Member extends Model
    */
 
   public double getHeight()
+
   {
     return height;
   }
@@ -121,6 +123,7 @@ public class Member extends Model
    */
 
   public double getWeight()
+
   {
     return weight;
   }
@@ -164,4 +167,70 @@ public class Member extends Model
   {
     this.weight = weight;
   }
+
+  public double getBMI()
+  {
+    if (assessments.size() > 0)
+    {
+      return Analytics.toTwoDecimalPlaces(assessments.get(assessments.size() - 1).getWeight() / (getHeight() * getHeight()));
+    }
+    else
+    {
+      return Analytics.toTwoDecimalPlaces(getWeight() / (getHeight() * getHeight()));
+    }
+  }
+
+  public String getCategory()
+  {
+    return Analytics.determineBMICategory(getBMI());
+  }
+
+  public String getIdeal()
+  {
+    double ideal = 0.0;
+    double heightInInches = Analytics.convertHeightMetresToInches(getHeight());
+
+    if (assessments.size() > 0)
+    {
+      weight = assessments.get(assessments.size() - 1).getWeight();
+    }
+    else
+    {
+      weight = getWeight();
+    }
+
+    if(getHeight() <= 1.52)
+    {
+      if(getGender().equals("Male"))
+      {
+        ideal = 45.5;
+      }
+      else
+      {
+        ideal = 50;
+      }
+    }
+
+    if(getHeight() >= 1.52)
+    {
+      if(getGender().equals("Male"))
+      {
+        ideal = 50 + (2.3 * (heightInInches - 60));
+      }
+      else
+      {
+        ideal = 45.5 + (2.3 * (heightInInches - 60));
+      }
+    }
+
+    if ((weight >= (ideal - 2)) && (weight <= (ideal + 2)))
+    {
+      return "green";
+    }
+    else
+    {
+      return "red";
+    }
+  }
+
 }

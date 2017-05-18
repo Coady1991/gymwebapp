@@ -13,24 +13,19 @@ import models.*;
  *
  * Created by Coady on 17/05/2017.
  */
-public class Analytics
-{
+public class Analytics {
   /**
    * This method calculates the BMI value for the member.
-   *
+   * <p>
    * The formula used for BMI is weight divided by the square of the height.
    *
    * @return the BMI value for the member.  The number returned is truncated to two decimal places.
    **/
 
-  public static double calculateBMI (Member member)
-  {
-    if(member.assessments.size() > 0)
-    {
+  public static double calculateBMI(Member member) {
+    if (member.assessments.size() > 0) {
       return toTwoDecimalPlaces(member.assessments.get(member.assessments.size() - 1).getWeight() / (member.getHeight() * member.getHeight()));
-    }
-    else
-    {
+    } else {
       return toTwoDecimalPlaces(member.getWeight() / (member.getHeight() * member.getHeight()));
     }
   }
@@ -39,7 +34,7 @@ public class Analytics
    * This method determines the BMI category that the member belongs to.
    *
    * @return The BMI category that the member belongs to.
-   *
+   * <p>
    * BMI less than     15(exclusive)   is                     "VERY SEVERLY UNDERWEIGHT".
    * BMI between       15(inclusive)   and 16(exclusive)   is "SEVERELY UNDERWEIGHT".
    * BMI between       16(inclusive)   and 18.5(exclusive) is "UNDERWEIGHT".
@@ -50,43 +45,101 @@ public class Analytics
    * BMI greater than  40(inclusive)   is                     "VERY SEVERELY OBESE".
    */
 
-  public static String determineBMICategory(double bmiValue)
-  {
+  public static String determineBMICategory(double bmiValue) {
     String BMI = "";
-    if(bmiValue < 15)
-    {
+    if (bmiValue < 15) {
       BMI = "VERY SEVERELY UNDERWEIGHT";
-    }
-    else if((bmiValue >= 15) && (bmiValue < 16))
-    {
+    } else if ((bmiValue >= 15) && (bmiValue < 16)) {
       BMI = "SEVERELY UNDERWEIGHT";
-    }
-    else if((bmiValue >= 16) && (bmiValue < 18.5))
-    {
+    } else if ((bmiValue >= 16) && (bmiValue < 18.5)) {
       BMI = "UNDERWEIGHT";
-    }
-    else if((bmiValue >= 18.5) && (bmiValue < 25))
-    {
+    } else if ((bmiValue >= 18.5) && (bmiValue < 25)) {
       BMI = "NORMAL";
-    }
-    else if((bmiValue >= 25) && (bmiValue < 30))
-    {
+    } else if ((bmiValue >= 25) && (bmiValue < 30)) {
       BMI = "OVERWEIGHT";
-    }
-    else if((bmiValue >= 30) && (bmiValue < 35))
-    {
+    } else if ((bmiValue >= 30) && (bmiValue < 35)) {
       BMI = "MODERATELY OBESE";
-    }
-    else if((bmiValue >= 35) && (bmiValue < 40))
-    {
+    } else if ((bmiValue >= 35) && (bmiValue < 40)) {
       BMI = "SEVERELY OBESE";
-    }
-    else if(bmiValue >= 40)
-    {
+    } else if (bmiValue >= 40) {
       BMI = "VERY SEVERELY OBESE";
     }
     return BMI;
   }
+
+
+  public static String isIdealBodyWeight(Member member)
+  {
+    double heightInInches = convertHeightMetresToInches(member.getHeight());
+    double idealBodyWeight = 0.0;
+    double weight;
+
+    if (member.assessments.size() > 0)
+    {
+      weight = member.assessments.get(member.assessments.size() - 1).getWeight();
+    }
+    else
+    {
+      weight = member.getWeight();
+    }
+
+    if (member.getHeight() <= 1.52)
+    {
+      if (member.getGender().equals("Male"))
+      {
+        idealBodyWeight = 50;
+      }
+      if (member.getGender().equals("Female"))
+      {
+        idealBodyWeight = 45.5;
+      }
+    }
+
+    if (member.getHeight() > 1.52) {
+      if (member.getGender().equals("Male"))
+      {
+        idealBodyWeight = 50 + (2.3 * (heightInInches - 60));
+      }
+      if (member.getGender().equals("Female"))
+      {
+        idealBodyWeight = 45.5 + (2.3 * (heightInInches - 60));
+      }
+
+    }
+
+    if ((weight >= (idealBodyWeight - 2)) && (weight <= (idealBodyWeight + 2)))
+    {
+      return "green";
+    }
+    else
+    {
+      return "red";
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   public static String idealWeight(String bmiCategory)
   {
@@ -143,7 +196,7 @@ public class Analytics
    * @return Value to decimal places.
    */
 
-  private static double toTwoDecimalPlaces(double num)
+  public static double toTwoDecimalPlaces(double num)
   {
     return (int)(num * 100) / 100.0;
   }

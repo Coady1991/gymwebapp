@@ -6,13 +6,13 @@
 GET     /                                       Start.index
 
 # Accounts
-GET     /signup                                 Accounts.signup
-GET     /login                                  Accounts.login
-POST    /register                               Accounts.register
-POST    /authenticate                           Accounts.authenticate
-GET     /logout                                 Accounts.logout
-GET     /admin                                  Admin.index
-POST    /dashboard/addAssessment                Dashboard.addAssessment
+GET     /signup                                             Accounts.signup
+GET     /login                                              Accounts.login
+POST    /register                                           Accounts.register
+POST    /authenticate                                       Accounts.authenticate
+GET     /logout                                             Accounts.logout
+GET     /admin                                              Admin.index
+POST    /dashboard/addAssessment                            Dashboard.addAssessment
 GET     /dashboard/{id}/deleteAssessment/{assessmentid}     Dashboard.deleteAssessment
 
 # Home page
@@ -32,6 +32,7 @@ POST    /updateprofile/setWeight                UpdateProfile.setWeight
 
 # Trainer
 GET     /trainerdashboard/{trainerid}/deletemember/{memberid}     TrainerDashboard.deleteMember
+GET     /trainerdashboard/trainerview/{memberid}      TrainerDashboard.memberDashboard
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

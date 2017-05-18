@@ -1,7 +1,7 @@
 #{extends 'main.html' /}
 #{set title:'Trainer Dashboard' /}
 
-#{trainermenu id:"trainerashboard"/}
+#{trainermenu id:"trainerdashboard"/}
 
 <section class="ui raised segment">
   <header class="ui header">
@@ -16,7 +16,8 @@
             <td>
               <div class="item">
                 <div class="content">
-                  <i class="user icon"></i>${member.name}<a href="/trainerdashboard/${trainer.id}/deletemember/${member.id}"><i class="large red trash icon"></i></a>
+                  <i class="user icon"></i><a href="/trainerdashboard/trainerview/${member.id}">${member.name}</a>
+                  <a href="/trainerdashboard/${trainer.id}/deletemember/${member.id}"><i class="large red trash icon"></i></a>
                 </div>
               </div>
             </td>

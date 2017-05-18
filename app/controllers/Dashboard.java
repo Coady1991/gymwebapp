@@ -17,17 +17,17 @@ public class Dashboard extends Controller
     List<Assessment> assessments = member.assessments;
     double BMI = Analytics.calculateBMI(member);
     String bmiCategory = Analytics.determineBMICategory(BMI);
-    String idealWeight = Analytics.idealWeight(bmiCategory);
-    render ("dashboard.html", member, assessments, BMI, bmiCategory, idealWeight);
+    String isIdealBodyWeight = Analytics.isIdealBodyWeight(member);
+    render ("dashboard.html", member, assessments, BMI, bmiCategory, isIdealBodyWeight);
   }
 
-  public static void addAssessment(double weight, double chest, double thigh, double upperArm, double waist, double hips)
+  public static void addAssessment(double weight, double chest, double thigh, double upperArm, double waist, double hips, String comment)
   {
     Member member = Accounts.getLoggedInMember();
-    Assessment assessment = new Assessment(weight, chest, thigh, upperArm, waist, hips);
+    Assessment assessment = new Assessment(weight, chest, thigh, upperArm, waist, hips, comment);
     member.assessments.add(assessment);
     member.save();
-    Logger.info("Adding Assessment" + weight, chest, thigh, upperArm, waist, hips);
+    Logger.info("Adding Assessment" + weight, chest, thigh, upperArm, waist, hips, comment);
     redirect("/dashboard");
   }
 

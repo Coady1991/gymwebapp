@@ -29,4 +29,13 @@ public class TrainerDashboard extends Controller
     Logger.info("Member deleted");
     redirect("/trainerdashboard");
   }
+
+  public static void memberDashboard(Long memberid)
+  {
+    Logger.info("Rendering Dashboard");
+    Trainer trainer = Accounts.getLoggedInTrainer();
+    Member member = Member.findById(memberid);
+    List<Assessment> assessments = member.assessments;
+    render("trainerview.html", trainer, member, assessments);
+  }
 }
