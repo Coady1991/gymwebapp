@@ -7,10 +7,15 @@ import java.util.List;
 
 
 /**
- * Created by Coady on 17/05/2017.
+ * The class controls the methods that can be used by a trainer
+ * in their dashboard.
  */
 public class TrainerDashboard extends Controller
 {
+  /**
+   * When a trainer logs in this method renders their dashboard
+   * and associated details for that trainer.
+   */
   public static void index()
   {
     Logger.info("Rendering TrainerDashboard");
@@ -19,6 +24,11 @@ public class TrainerDashboard extends Controller
     render("trainerdashboard.html", trainer, members);
   }
 
+  /**
+   * This allows a trainer delete a member by member id.
+   *
+   * @param memberid The members id.
+   */
   public static void deleteMember(Long memberid)
   {
     Trainer trainer = Accounts.getLoggedInTrainer();
@@ -30,6 +40,11 @@ public class TrainerDashboard extends Controller
     redirect("/trainerdashboard");
   }
 
+  /**
+   * This method renders the view for the trainer of a specific member.
+   *
+   * @param memberid The members id.
+   */
   public static void memberDashboard(Long memberid)
   {
     Logger.info("Rendering Dashboard");
@@ -39,6 +54,13 @@ public class TrainerDashboard extends Controller
     render("trainerview.html", trainer, member, assessments);
   }
 
+  /**
+   * This method allows the trainer to add a comment to a members assessment.
+   *
+   * @param memberid The members id.
+   * @param assessmentid The assessment id.
+   * @param comment The commentn the trainer makes.
+   */
   public static void addComment(Long memberid, Long assessmentid, String comment)
   {
     Trainer trainer = Accounts.getLoggedInTrainer();

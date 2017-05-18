@@ -13,7 +13,8 @@ import models.*;
  *
  * Created by Coady on 17/05/2017.
  */
-public class Analytics {
+public class Analytics
+{
   /**
    * This method calculates the BMI value for the member.
    * <p>
@@ -44,7 +45,6 @@ public class Analytics {
    * BMI between       35(inclusive)   and 40(exclusive    is "SEVERELY OBESE".
    * BMI greater than  40(inclusive)   is                     "VERY SEVERELY OBESE".
    */
-
   public static String determineBMICategory(double bmiValue) {
     String BMI = "";
     if (bmiValue < 15) {
@@ -67,7 +67,19 @@ public class Analytics {
     return BMI;
   }
 
-
+  /**
+   * This method returns a boolean to indicate if the member has an ideal
+   * body weight based on the divine formula
+   *
+   * For males, an ideal body weight is: 50kg + 2.3kg for each inch over 5 feet
+   * For females, an ideal body weight is: 45.5kg + 2.3kg for each inch over 5 feet.
+   * Note: If no gender is specified, return result of the female calculation.
+   * Note: If the member is 5 feet or less, return 50kg for male and 45.5kg for female.
+   *
+   * @return Green if the result of the devine formula is within
+   * 2kgs (inclusive) of the weight; red if it is outside
+   * this range.
+   */
   public static String isIdealBodyWeight(Member member)
   {
     double heightInInches = convertHeightMetresToInches(member.getHeight());

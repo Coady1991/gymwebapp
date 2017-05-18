@@ -7,10 +7,13 @@ import models.*;
 import java.util.List;
 
 /**
- * Created by Coady on 17/05/2017.
+ * This class allows a member to update their details
  */
 public class UpdateProfile extends Controller
 {
+  /**
+   * This method renders the update profile page.
+   */
   public static void index()
   {
     Logger.info("Rendering Member Profile");
@@ -19,6 +22,11 @@ public class UpdateProfile extends Controller
     render("updateprofile.html", member, assessments);
   }
 
+  /**
+   * Allows the member to update their name.
+   *
+   * @param name The members name.
+   */
   public static void setName(String name)
   {
     Member member = Accounts.getLoggedInMember();
@@ -28,6 +36,11 @@ public class UpdateProfile extends Controller
     redirect("/updateprofile");
   }
 
+  /**
+   * Allows the member to update their email.
+   *
+   * @param email The members email.
+   */
   public static void setEmail(String email)
   {
     Member member = Accounts.getLoggedInMember();
@@ -37,6 +50,11 @@ public class UpdateProfile extends Controller
     redirect("/updateprofile");
   }
 
+  /**
+   * Allows the member to update their password.
+   *
+   * @param password The members password.
+   */
   public static void setPassword(String password)
   {
     Member member = Accounts.getLoggedInMember();
@@ -46,6 +64,11 @@ public class UpdateProfile extends Controller
     redirect("/updateprofile");
   }
 
+  /**
+   * Allows the member to update their address.
+   *
+   * @param address The members address.
+   */
   public static void setAddress(String address)
   {
     Member member = Accounts.getLoggedInMember();
@@ -55,6 +78,11 @@ public class UpdateProfile extends Controller
     redirect("/updateprofile");
   }
 
+  /**
+   * Allows the member to update their gender.
+   *
+   * @param gender The members gender.
+   */
   public static void setGender(String gender)
   {
     Member member = Accounts.getLoggedInMember();
@@ -64,6 +92,11 @@ public class UpdateProfile extends Controller
     redirect("/updateprofile");
   }
 
+  /**
+   * Allows the member to update their height.
+   *
+   * @param height The members height.
+   */
   public static void setHeight(double height)
   {
     Member member = Accounts.getLoggedInMember();
@@ -73,6 +106,11 @@ public class UpdateProfile extends Controller
     redirect("/updateprofile");
   }
 
+  /**
+   * Allows the member to update their weight.
+   *
+   * @param weight The members weight.
+   */
   public static void setWeight(double weight)
   {
     Member member = Accounts.getLoggedInMember();
