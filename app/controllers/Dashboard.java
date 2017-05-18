@@ -15,7 +15,7 @@ public class Dashboard extends Controller
     Logger.info("Rendering Dashboard");
     Member member = Accounts.getLoggedInMember();
     List<Assessment> assessments = member.assessments;
-    double BMI = Analytics.calculateBMI(member, member.assessments.get(assessments.size() - 1));
+    double BMI = Analytics.calculateBMI(member);
     String bmiCategory = Analytics.determineBMICategory(BMI);
     String idealWeight = Analytics.idealWeight(bmiCategory);
     render ("dashboard.html", member, assessments, BMI, bmiCategory, idealWeight);

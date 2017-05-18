@@ -3,11 +3,9 @@
 
 #{trainermenu id:"trainerashboard"/}
 
-<form class="ui raised segment form" action="/dashboard/addAssessment" method="POST">
-  <div class="three fields">
-    <div class="field">
-      <label>Weight (Kg)</label>
-      <input placeholder="00.00kg" type="number" min="35" max="250" step="0.01" name="weight" required>
-    </div>
-  </div>
-</form>
+<section class="ui raised segment">
+  <header class="ui header">
+    ${trainer.name}
+  </header>
+</section>
+
