@@ -45,6 +45,7 @@
 </section>
 
 <section class="ui raised segment">
+#{list items:assessments, as:'assessment'}
   <table class="ui seven column table">
     <thead>
       <tr>
@@ -55,11 +56,9 @@
         <th>Waist</th>
         <th>Hips</th>
         <th>Comment</th>
-        <th> </th>
       </tr>
     </thead>
     <tbody>
-      #{list items:assessments, as:'assessment'}
       <tr>
         <td>
           ${assessment.weight}
@@ -82,11 +81,19 @@
         <td>
           ${assessment.comment}
         </td>
-        <td>
-          <a href="/dashboard/${member.id}/deleteAssessment/${assessment.id}"><i class="large red trash icon"></i></a>
-        </td>
     </tr>
-    #{/list}
+
     </tbody>
   </table>
+
+  <form class="ui form" action="/trainerview/${member.id}/addcomment/${assessment.id}" method="POST">
+    <div class="field">
+      <label>Comment</label>
+      <input placeholder="Comment" type="text" name="comment">
+    </div>
+    <div class="field">
+      <button class="ui blue submit button">Submit</button>
+    </div>
+  </form>
+#{/list}
 </section>

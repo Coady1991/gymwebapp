@@ -38,4 +38,16 @@ public class TrainerDashboard extends Controller
     List<Assessment> assessments = member.assessments;
     render("trainerview.html", trainer, member, assessments);
   }
+
+  public static void addComment(Long memberid, Long assessmentid, String comment)
+  {
+    Trainer trainer = Accounts.getLoggedInTrainer();
+    Member member = Member.findById(memberid);
+    List<Assessment> assessments = member.assessments;
+    Assessment assessment = Assessment.findById(assessmentid);
+    assessment.setComment(comment);
+    assessment.save();
+    Logger.info("Updating assessment comment");
+    render("trainerview.html", trainer, member, assessments);
+  }
 }

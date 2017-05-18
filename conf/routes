@@ -20,6 +20,7 @@ GET     /dashboard                              Dashboard.index
 GET     /about                                  About.index
 GET     /trainerdashboard                       TrainerDashBoard.index
 GET     /updateprofile                          UpdateProfile.index
+GET     /trainerview                            TrainerDashBoard.index
 
 # Update profile
 POST    /updateprofile/setName                  UpdateProfile.setName
@@ -32,7 +33,8 @@ POST    /updateprofile/setWeight                UpdateProfile.setWeight
 
 # Trainer
 GET     /trainerdashboard/{trainerid}/deletemember/{memberid}     TrainerDashboard.deleteMember
-GET     /trainerdashboard/trainerview/{memberid}      TrainerDashboard.memberDashboard
+GET     /trainerdashboard/trainerview/{memberid}                  TrainerDashboard.memberDashboard
+POST    /trainerview/{memberid}/addcomment/{assessmentid}         TrainerDashboard.addComment
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

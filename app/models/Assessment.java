@@ -105,4 +105,9 @@ public class Assessment extends Model
   {
     return comment;
   }
+
+  public void setComment(String comment)
+  {
+    this.comment = comment;
+  }
 }
