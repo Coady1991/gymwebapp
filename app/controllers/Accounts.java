@@ -1,6 +1,6 @@
 package controllers;
 
-import models.Member;
+import models.*;
 import play.Logger;
 import play.mvc.Controller;
 
@@ -29,11 +29,18 @@ public class Accounts extends Controller
     Logger.info("Attempting to authenticate with " + email + ":" + password);
 
     Member member = Member.findByEmail(email);
+    Trainer trainer = Trainer.findByEmail(email);
     if ((member != null) && (member.checkPassword(password) == true))
     {
       Logger.info("Authentication successful");
       session.put("logged_in_Memberid", member.id);
-      redirect ("/dashboard");
+      redirect("/dashboard");
+    }
+    else if((trainer != null) && (trainer.checkPassword(password) == true))
+    {
+      Logger.info("Authentication successful");
+      session.put("logged_in_Trainerid", trainer.id);
+      redirect("/trainerdashboard");
     }
     else
     {
@@ -61,5 +68,20 @@ public class Accounts extends Controller
       login();
     }
     return member;
+  }
+
+  public static Trainer getLoggedInTrainer()
+  {
+    Trainer trainer = null;
+    if(session.contains("logged_in_Trainerid"))
+    {
+      String trainerId = session.get("logged_in_Trainerid");
+      trainer = Trainer.findById(Long.parseLong(trainerId));
+    }
+    else
+    {
+      login();
+    }
+    return trainer;
   }
 }

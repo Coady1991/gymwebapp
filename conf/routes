@@ -18,6 +18,7 @@ GET     /dashboard/{id}/deleteAssessment/{assessmentid}     Dashboard.deleteAsse
 # Home page
 GET     /dashboard                              Dashboard.index
 GET     /about                                  About.index
+GET     /trainerdashboard                       TrainerDashBoard.index
 GET     /updateprofile                          UpdateProfile.index
 
 # Update profile

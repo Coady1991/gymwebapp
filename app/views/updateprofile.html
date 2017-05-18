@@ -22,7 +22,7 @@
           <div class="field">
             <label>Email</label>
               <div class="field">
-                <input placeholder="Email" type="text" name="email">
+                <input placeholder="Email" type="email" name="email">
               </div>
             <button class="ui blue submit button">Submit</button>
           </div>
@@ -48,9 +48,9 @@
         <form class="ui raised segment form" action="/updateprofile/setGender" method="POST">
           <div class="field">
             <label>Gender</label>
-              <div class="field">
-                <input placeholder="Gender" type="text" name="gender">
-              </div>
+             <div class="field">
+               <input placeholder="Gender" type="text" name="gender">
+             </div>
             <button class="ui blue submit button">Submit</button>
           </div>
         </form>
@@ -58,7 +58,7 @@
           <div class="field">
             <label>Height (M)</label>
               <div class="field">
-                <input placeholder="Height" type="text" name="height">
+                <input placeholder="Height" type="number" min="1.00" max="3.00" step="0.01" name="height">
               </div>
             <button class="ui blue submit button">Submit</button>
           </div>
@@ -67,7 +67,7 @@
           <div class="field">
             <label>Weight (kg)</label>
               <div class="field">
-                <input placeholder="Weight" type="text" name="weight">
+                <input placeholder="Weight" type="number" type="number" min="35" max="250" step="0.01" name="weight">
               </div>
             <button class="ui blue submit button">Submit</button>
           </div>

@@ -53,3 +53,10 @@ Member(m2):
   assessments:
   - a3
   - a4
+
+Trainer(t1):
+  name: Ben
+  email: train@mail.com
+  password: secret
+  address: Hillside, Dungarvan
+  gender: Male

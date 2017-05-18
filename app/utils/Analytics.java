@@ -91,7 +91,7 @@ public class Analytics
   public static String idealWeight(String bmiCategory)
   {
     String colour;
-    
+
     if(bmiCategory.contains("SEVERELY") || bmiCategory.contains("OBESE"))
     {
       colour = "red";
