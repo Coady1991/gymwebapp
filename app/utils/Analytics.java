@@ -80,7 +80,6 @@ public class Analytics
    * 2kgs (inclusive) of the weight; red if it is outside
    * this range.
    */
-  
   public static String isIdealBodyWeight(Member member)
   {
     double heightInInches = convertHeightMetresToInches(member.getHeight());
@@ -128,49 +127,6 @@ public class Analytics
     {
       return "red";
     }
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  public static String idealWeight(String bmiCategory)
-  {
-    String colour;
-
-    if(bmiCategory.contains("SEVERELY") || bmiCategory.contains("OBESE"))
-    {
-      colour = "red";
-    }
-    else if(bmiCategory.contains("UNDERWEIGHT") || bmiCategory.contains("OVERWEIGHT"))
-    {
-      colour = "orange";
-    }
-    else
-    {
-      colour = "green";
-    }
-    return colour;
   }
 
   /**
