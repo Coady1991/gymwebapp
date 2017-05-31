@@ -8,3 +8,5 @@ The member inputs their assessment measurements and analytics are generated on t
 of the member after a given assessment, such as their BMI, BMI Cateogry, and if their are 
 of an ideal weight. The app enables a trainer to review assessments, and comment on any specific assessment
 or delete a member from the records.
+
+Deployed at https://gymwebapp.herokuapp.com/
